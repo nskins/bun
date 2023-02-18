@@ -48,8 +48,6 @@ pub const Run = struct {
         JSC.markBinding(@src());
         @import("bun.js/javascript_core_c_api.zig").JSCInitialize();
 
-        _ = C.setTtyOrigTermiosIfNeeded();
-
         js_ast.Expr.Data.Store.create(default_allocator);
         js_ast.Stmt.Data.Store.create(default_allocator);
         var arena = try Arena.init();
